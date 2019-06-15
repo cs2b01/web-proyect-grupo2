@@ -50,17 +50,11 @@ def create_test_users():
 
 @app.route('/users', methods = ['POST'])
 def create_user():
-    c =  json.loads(request.form['values'])
-    user = entities.User(
-        username=c['username'],
-        name=c['name'],
-        fullname=c['fullname'],
-        password=c['password']
-    )
+    user = json.loads(request.form['username'], request.form['name'], request.form['fullname'], request.form['password'])
     session = db.getSession(engine)
     session.add(user)
     session.commit()
-    return 'Created User'
+    return redirect(url_for('/'))
 
 @app.route('/authenticate', methods = ["POST"])
 def authenticate():
