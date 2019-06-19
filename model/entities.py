@@ -15,5 +15,6 @@ class Publish(connector.Manager.Base):
     id = Column(Integer, Sequence('publish_id_seq'), primary_key=True)
     title = Column(String(50))
     autor = Column(String(12))
+    short_resume = Column(String(700))
     content = Column(String(1500))
     sent_on = Column(DateTime(timezone=True))

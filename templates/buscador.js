@@ -28,6 +28,7 @@ function allresumes(){
                     f = '<div class="card mb-4">';
                     f = f + '<div class="card-body">';
                     f = f + '<h2 class="card-title">'+response[i].title+'</h2>';
+                    f = f + '<p class="card-text">'+response[i].short_resume+'</p>';
                     f = f + '<a href="/static/resumen_plt.html" onclick="setId('+response[i].id+')" class="btn btn-primary">Read More &rarr;</a></div></div>';
                     $('#allresumes').append(f);
                     i = i+1;
